@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -9,6 +11,8 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
 	integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 	crossorigin="anonymous">
+	
+<link rel="stylesheet" href="../css/footer.css">
 
 <style>
 div.container {
@@ -36,46 +40,16 @@ div.container {
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item" onmouseover="menu_over(this);"
-					onmouseout="menu_out(this)"><a class="nav-link" href="a.html">메뉴1
-						<span class="sr-only">(current)</span>
-				</a></li>
-				<li class="nav-item" onmouseover="menu_over(this);"
-					onmouseout="menu_out(this)"><a class="nav-link" href="p.html">메뉴2</a></li>
-				<li class="nav-item" onmouseover="menu_over(this);"
-					onmouseout="menu_out(this)"><a class="nav-link"
-					href="dom.html">메뉴3</a></li>
-			</ul>
+			<%@ include file ="menu.jsp" %>
 			<form class="form-inline my-2 my-lg-0" id="loginForm">
 				<input class="form-control mr-sm-2" type="text" placeholder="ID"
 					aria-label="ID" id="id" required> <input
 					class="form-control mr-sm-2" type="password" placeholder="PWD"
 					aria-label="PWD" id="pwd" required>
-				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">ê²ì</button>
 			</form>
 		</div>
 	</nav>
-	
-	<div class="modal" id="myModal">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h5 class="modal-title">로그인 결과</h5>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	          <span aria-hidden="true">&times;</span>
-	        </button>
-	      </div>
-	      <div class="modal-body">
-	        <p></p>
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-primary">Save changes</button>
-	        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
 	
 	<div class="container">
 		<h1>Hello, Bootstrap!</h1>
@@ -101,6 +75,9 @@ div.container {
 			eligendi optio cumque nihil impedit quo minus id quod maxime placeat
 			facere</p>
 	</div>
+	
+	<%@ include file ="modal.jsp" %>	
+	<%@ include file="footer.jsp" %>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -116,28 +93,28 @@ div.container {
 	<script>
 		$(document).ready(function() {
 			$('#loginForm').submit(function(event) {
-				// 자동으로 submit 되는 걸 막기
+				// ìëì¼ë¡ submit ëë ê±¸ ë§ê¸°
 				event.preventDefault();
 
-				// id, pwd값 가져오기
+				// id, pwdê° ê°ì ¸ì¤ê¸°
 				// document.getElementById("id").value
 				var id = $('#id').val();
 				var pwd = $('#pwd').val();
 				console.log(id, pwd);
 
-				// 서버로 post 전송(ajax)
+				// ìë²ë¡ post ì ì¡(ajax)
 				$.post( "/WebClass/login", 
 					{"id" : id, "pwd" : pwd }, 
 					function(data) {
-						//alert(data.form.id + '님 로그인 되었습니다.');
+						//alert(data.form.id + 'ë ë¡ê·¸ì¸ ëììµëë¤.');
 						var myModal = $('#myModal');
 						myModal.modal();
-						myModal.find('.modal-body').text(data.id + '님 로그인 되었습니다.');
+						myModal.find('.modal-body').text(data.id + 'ë ë¡ê·¸ì¸ ëììµëë¤.');
 					});
 				});
 		});
 
-		// 간단하게 쓰기
+		// ê°ë¨íê² ì°ê¸°
 		$(function() {
 
 		});

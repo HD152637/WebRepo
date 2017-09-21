@@ -1,0 +1,13 @@
+@CHARSET "utf-8";
+
+#confirm {
+	color: red;
+}
+
+body {
+	padding-top: 100px;
+}
+
+#list {
+	width: 254px;
+}

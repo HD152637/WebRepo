@@ -1,0 +1,39 @@
+@CHARSET "utf-8";
+
+.contents {
+	font-size: 18px;
+}
+
+.overlay {
+	height: 954px;
+}
+
+header.masthead {
+	background: url('../image/cover.jpg') no-repeat center center scroll;
+	background-size: 1200px;
+	padding-top: 54px;
+}
+
+.overlay {
+	padding: 10rem 0;
+	padding-top: 10rem 0;
+	text-align: center;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+#png1, #png2, #png3 {
+	margin: 20px;
+	margin-top: 50px;
+}
+
+#bottom {
+	padding-top: 12px;
+}
+
+.section {
+	padding: 200px;
+}
+
+.down{
+	float: right;
+}
