@@ -40,7 +40,7 @@ $(function() {
                 myModal.modal();
                 myModal.find('.modal-body').text(data.form.id + '님 회원가입 되었습니다.');
             });
-            document.getElementById("confirm").innerHTML = ""
+            document.getElementById("confirm").innerHTML = "";
         } else {
             document.getElementById("confirm").innerHTML = "비밀번호가 일치하지 않습니다.";
         }
