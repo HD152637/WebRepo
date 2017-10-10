@@ -22,14 +22,14 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Minho's Blog</a>
+            <a class="navbar-brand" href="/WebClass/myblog/index.jsp">Minho's Blog</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span>
+                        <a class="nav-link" href="/WebClass/myblog/index.jsp">Home<span class="sr-only">(current)</span>
 					</a>
                 </ul>
             </div>
@@ -143,37 +143,6 @@
             </div>
         </div>
     </div>
-    <!--
-    <script>
-    $(document).ready(function() {
-		$('#signupForm').submit(function(event) {
-			event.preventDefault();
-	
-			var id = $('#inputEmail').val();
-			var pwd = $('#inputPassword').val();
-			var name = $('#inputName').val();
-			var nickname = $('#inputNickName').val();
-			
-			$.post("/WebClass/signup2", {
-				"id" : id,
-				"pwd" : pwd,
-				"name" : name,
-				"nickname" : nickname
-			},function(data){
-				if(data){
-					window.location.href="/WebClass/login";
-				}
-				else{
-					var myModal = $('#myModal');
-					myModal.find('.modal-title').text('Sign Up Error');
-					myModal.find('.modal-body').text('회원 가입 시 오류가 발생하였습니다.');
-					myModal.modal();
-				}
-			});
-		});
-	});
-    </script>
-    -->
 </body>
 
 </html>

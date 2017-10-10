@@ -41,7 +41,7 @@
 	$(document).ready(function() {
 		$('#signupForm').submit(function(event) {
 			event.preventDefault();
-	W
+	
 			var id = $('#inputEmail').val();
 			var pwd = $('#inputPassword').val();
 			var name = $('#inputName').val();
@@ -54,7 +54,7 @@
 				"nickname" : nickname
 			},function(data){
 				if(data){
-					window.location.href="/WebClass/login";
+					window.location.href="/WebClass/jsp/home2.jsp";
 				}
 				else{
 					var myModal = $('#myModal');

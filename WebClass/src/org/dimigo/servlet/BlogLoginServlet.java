@@ -53,21 +53,12 @@ public class BlogLoginServlet extends HttpServlet {
 		
 		if(id.equals(test)){
 			result = true;
-//			HttpSession session = request.getSession();
-//			
-//			UserVO user = new UserVO();
-//			user.setId(id);
-//			user.setName("홍길동");
-//			user.setNickname("의적 ");
-//			session.setAttribute("user", user);
-//			
-//			RequestDispatcher rd = request.getRequestDispatcher("myblog/index.jsp");
-//			rd.forward(request, response);
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("id", "test123");
+			session.setAttribute("result", result);
 		} else{
 			result = false;
-//			request.setAttribute("msg", "error");
-//			RequestDispatcher rd = request.getRequestDispatcher("myblog/login.jsp");
-//			rd.forward(request, response);
 		}
 		
 		out.print(result);

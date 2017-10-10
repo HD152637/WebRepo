@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="org.dimigo.vo.UserVO" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -45,9 +46,26 @@
                     <li class="nav-item">
                         <a class="nav-link disabled scroll" href="#third">Favorites</a>
                     </li>
+                    <%  
+                		if(session.getAttribute("result") != null){
+                    %>
+                   	<li class="nav-item active">
+                    	<a class="nav-link"><%= session.getAttribute("id")%>님</a>
+                    </li>	
+	                <li class="nav-item">
+                    <form action="/WebClass/bloglogout" id="logoutForm" method="post">
+	                    <a class="nav-link" href="#" onclick="document.getElementById('logoutForm').submit()" id="logout">Sign out</a>
+                    </form>
+                    </li>
+                    <%
+                		} else {
+                    %>
                     <li class="nav-item">
                         <a class="nav-link" href="/WebClass/bloglogin" id="login">Sign in / Sign up</a>
                     </li>
+                    <%
+                		}
+                    %>
                 </ul>
             </div>
         </div>

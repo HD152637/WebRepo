@@ -4,14 +4,10 @@ $(document).ready(function() {
 	
 			var id = $('#loginId').val();
 			var pwd = $('#loginPwd').val();
-//			var name = $('#inputName').val();
-//			var nickname = $('#inputNickName').val();
 			
 			$.post("/WebClass/bloglogin", {
 				"loginId" : id,
 				"loginPwd" : pwd
-//				"name" : name,
-//				"nickname" : nickname
 			},function(data){
 				if(data){
 					window.location.href="/WebClass/myblog/index.jsp";
