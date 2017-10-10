@@ -1,21 +1,30 @@
-$(function() {
-    $('#loginForm').submit(function(event) {
-        event.preventDefault();
-
-        var id = $('#loginId').val();
-        var pwd = $('#loginPwd').val();
-        // console.log(id, pwd);
-
-        $.post("http://httpbin.org/post", {
-            "id": id,
-            "pwd": pwd
-        }, function(data) {
-            var myModal = $('#loginModal');
-            myModal.modal();
-            myModal.find('.modal-body').text(data.form.id + '님 로그인 되었습니다.');
-        });
-    });
-});
+$(document).ready(function() {
+		$('#loginForm').submit(function(event) {
+			event.preventDefault();
+	
+			var id = $('#loginId').val();
+			var pwd = $('#loginPwd').val();
+//			var name = $('#inputName').val();
+//			var nickname = $('#inputNickName').val();
+			
+			$.post("/WebClass/bloglogin", {
+				"loginId" : id,
+				"loginPwd" : pwd
+//				"name" : name,
+//				"nickname" : nickname
+			},function(data){
+				if(data){
+					window.location.href="/WebClass/myblog/index.jsp";
+				}
+				else{
+					var myModal = $('#loginModal');
+					myModal.find('.modal-title').text('Sign Up Error');
+					myModal.find('.modal-body').text('회원 가입 시 오류가 발생하였습니다.');
+					myModal.modal();
+				}
+			});
+		});
+	});
 
 $(function() {
     $('#signForm').submit(function(event) {

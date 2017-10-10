@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+ 
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <button onclick="calculate()">calculate</button>
+ 
+    <script type="text/javascript">
+        window.onload = function () {
+            if (window.Notification) {
+                Notification.requestPermission();
+            }
+        }
+ 
+        function calculate() {
+            setTimeout(function () {
+                notify();
+            }, 1000);
+        }
+ 
+        function notify() {
+            if (Notification.permission !== 'granted') {
+                alert('notification is disabled');
+            }
+            else {
+                var notification = new Notification('공부하세요', {
+                	title: '공부하세요',
+                    body: '공부해',
+                    icon: '/WebClass/image/warning.png'
+                });
+ 
+                var audio = new Audio("http://www.w3schools.com/html/horse.mp3");
+                audio.play();
+                
+                notification.onclick = function () {
+                    notification.close();
+                };
+            }
+        }
+    </script>
+</body>
+</html>
