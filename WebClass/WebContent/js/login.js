@@ -4,6 +4,7 @@ $(document).ready(function() {
 	
 			var id = $('#loginId').val();
 			var pwd = $('#loginPwd').val();
+			$('#loginPwd').val('');
 			
 			$.post("/WebClass/bloglogin", {
 				"loginId" : id,
