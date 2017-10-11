@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+
 /**
  * Servlet implementation class BlogLoginServlet
  */
@@ -47,19 +50,23 @@ public class BlogLoginServlet extends HttpServlet {
 		System.out.println(id + " " + pwd);
 		
 		String test = "test@naver.com";
-		boolean result;
+		String result;
+		
+		Gson gson = new Gson();
+		JsonObject obj = new JsonObject();
 		
 		if(id.equals(test)){
-			result = true;
+			result = "success";
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("id", "test123");
 			session.setAttribute("result", result);
 		} else{
-			result = false;
+			result = "error";
 		}
+		obj.addProperty("msg", result);
 		
-		out.print(result);
+		out.write(gson.toJson(obj));
 		out.close();
 	}
 

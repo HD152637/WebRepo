@@ -53,7 +53,7 @@ public class SignUpSevlet2 extends HttpServlet {
 		System.out.println(id + " " + pwd + " " + name + " " + nickname);
 		
 		// id, pwd 사용자 인증 체크
-		boolean result = true;
+		boolean result = false;
 		
 		out.print(result);
 		out.close();

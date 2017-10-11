@@ -53,7 +53,7 @@
 				"name" : name,
 				"nickname" : nickname
 			},function(data){
-				if(data){
+				if(data == "true"){
 					window.location.href="/WebClass/jsp/home2.jsp";
 				}
 				else{

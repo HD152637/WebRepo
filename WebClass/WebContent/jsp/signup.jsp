@@ -45,10 +45,10 @@
 		$('#inputPassword').val("<%=request.getParameter("pwd")%>");
 		$('#inputName').val("<%=request.getParameter("name")%>");
 		$('#inputNickName').val("<%=request.getParameter("nickname")%>");
-		var myModal = $('#myModal');
-		myModal.find('.modal-title').text('Sign Up Error');
-		myModal.find('.modal-body').text('회원 가입 시 오류가 발생하였습니다.');
-		myModal.modal();
+		//var myModal = $('#myModal');
+		//myModal.find('.modal-title').text('Sign Up Error');
+		//myModal.find('.modal-body').text('회원 가입 시 오류가 발생하였습니다.');
+		//myModal.modal();
 	<%}%>
 </script>
 

@@ -9,8 +9,8 @@ $(document).ready(function() {
 				"loginId" : id,
 				"loginPwd" : pwd
 			},function(data){
-				if(data){
-					window.location.href="/WebClass/myblog/index.jsp";
+				if(data.msg == "success"){
+					location.href="/WebClass/myblog/index.jsp";
 				}
 				else{
 					var myModal = $('#loginModal');
